@@ -23,14 +23,6 @@ Follow these steps in order:
    - Delete the auto-generated `index.ts` file
    - Import components from files directly
 
-6. **Update styling from React version**
-   - Go to https://github.com/shadcn-ui/ui/tree/main/apps/v4/examples/base/ui
-   - Find the corresponding React components
-   - Copy class names / styling from React components
-   - Replace shadcn-svelte default styling with these class names
-   - Match class names exactly - don't overcomplicate
-   - Do this 1 at a time to make sure you get the class names exactly
-
 ## Final Steps
 
 After completing all workflow steps:
