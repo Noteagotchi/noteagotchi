@@ -9,7 +9,10 @@ const config = {
   preprocess: vitePreprocess(),
   kit: {
     adapter: adapter({
-      fallback: 'index.html'
+      pages: 'build',
+      assets: 'build',
+      fallback: 'index.html',
+      precompress: false
     }),
     alias: {
       $components: 'src/components',
@@ -17,7 +20,8 @@ const config = {
       $util: 'src/util',
       $stores: 'src/stores',
       $services: 'src/services',
-      $pages: 'src/pages'
+      $pages: 'src/pages',
+      $storybook: '.storybook/'
     }
   }
 };
