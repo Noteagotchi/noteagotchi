@@ -1,6 +1,6 @@
 <script lang="ts">
   import { ArrowUpIcon } from 'phosphor-svelte';
-  import { Button } from '$ui/button/index.js';
+  import { Button } from '$ui/Button';
 </script>
 
 <div class="flex flex-wrap items-center gap-2 md:flex-row bg-red-50">
