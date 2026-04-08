@@ -12,7 +12,12 @@ const config = {
       fallback: 'index.html'
     }),
     alias: {
-      '@/*': './src/lib/*'
+      $components: 'src/components',
+      $ui: 'src/components/ui',
+      $util: 'src/util',
+      $stores: 'src/stores',
+      $services: 'src/services',
+      $pages: 'src/pages'
     }
   }
 };
