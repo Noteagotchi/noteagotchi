@@ -17,7 +17,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@aneuhold/eslint-config": "^2.0.3",
+    "@aneuhold/eslint-config": "^2.0.4",
     "@fontsource-variable/noto-sans": "^5.2.10",
     "@fontsource-variable/oxanium": "^5.2.8",
     "@internationalized/date": "^3.12.0",
@@ -33,6 +33,7 @@
     "@tauri-apps/api": "^2",
     "@tauri-apps/cli": "^2",
     "@tauri-apps/plugin-opener": "^2",
+    "@types/node": "^25.5.2",
     "@typescript-eslint/eslint-plugin": "^8.58.0",
     "@typescript-eslint/parser": "^8.58.0",
     "bits-ui": "^2.17.2",

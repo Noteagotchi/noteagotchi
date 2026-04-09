@@ -18,7 +18,9 @@
  *
  * @param enumType The enum type to create the argType for.
  */
-export function createEnumArgType<T extends Record<string, string | number>>(enumType: T): object {
+export function createEnumArgType<T extends Record<string, string | number>>(
+  enumType: T
+): Record<string, unknown> {
   const values = Object.values(enumType);
   const isNumericEnum = values.some((x) => typeof x === 'number');
 
