@@ -10,17 +10,20 @@ Use `pnpm` for all package management:
 - Build (desktop binary): `pnpm build`
 - Check: `pnpm check` (TypeScript)
 - Lint: `pnpm lint` (ESLint)
+- Storybook: `pnpm storybook` (dev on port 6006)
 
 ## Important Project Files
 
 - `package.json` — scripts, pnpm configuration
 - `README.md` — getting started, tech stack
-- `svelte.config.js` — adapter (static/SPA), path aliases (`@/*` → `./src/lib/*`)
+- `svelte.config.js` — adapter (static/SPA), path aliases (`$components`, `$ui`, `$util`, `$stores`, `$services`, `$pages`, `$storybook`)
 - `vite.config.js` — Tailwind, Tauri dev server config (port 1420)
 - `src-tauri/tauri.conf.json` — Tauri app config, window settings, build commands
 - `src-tauri/src/` — Rust backend (lib.rs, main.rs)
-- `src/lib/components/ui` — shadcn-svelte UI components
-- `src/lib/utils.ts` — `cn()` class merging utility
+- `src/components/ui` — shadcn-svelte UI components (PascalCase folders with `index.ts` barrel files)
+- `src/util/svelteShadcnUtil.ts` — `cn()` class merging utility
+- `src/globalStyles/global.css` — global CSS, theme variables, font imports
+- `.storybook/` — Storybook config, `storybookUtil.ts` helpers
 
 ## Architecture & Conventions
 
@@ -28,9 +31,14 @@ Use `pnpm` for all package management:
 
 - **shadcn-svelte**: Use pre-built accessible components from shadcn-svelte. Reference: https://shadcn-svelte.com/llms.txt
 - **Adding components**: Use the `add-new-shadcn-component` command to add new shadcn-svelte components.
-- **Tailwind CSS v4**: Use utility classes for styling. No `@apply` in components; use `cn()` utility from `$lib/utils` to merge classes.
+- **Tailwind CSS v4**: Use utility classes for styling. No `@apply` in components; use `cn()` utility from `$util/svelteShadcnUtil` to merge classes.
 - **Class merging**: Always use `cn()` when conditionally applying Tailwind classes: `class={cn('base-class', condition && 'conditional-class')}`
 - **Clean CSS**: Never use inline styles, and keep the number of CSS classes to the absolute minimum.
+
+### Storybook Stories
+
+- Each `Story` is an instance of the component being tested, not a wrapper. Build variations accordingly.
+- If a wrapper is needed in order to properly demonstrate the functionality of the component, or provide easier access / test data to the various properties of the component, build a separate component next to the original called `SB<ComponentName>Example.svelte` and use that as your target component for the story variations.
 
 ### Animations & Transitions
 
@@ -49,7 +57,7 @@ The app uses a layered animation approach. Each layer uses the simplest tool tha
 
 - **Svelte 5 syntax**: Use modern runes (`$state()`, `$derived()`, `$effect()`, `$props()`)
 - **Singleton components**: Files named `Singleton*` are single-instance widgets that export imperative functions
-- **UI components**: shadcn-svelte components are stored in `src/lib/components/ui`
+- **UI components**: shadcn-svelte components are stored in `src/components/ui`
 - **Component docs**: Use JSDoc `@component` tag at top of `.svelte` files
 
 ### State Management

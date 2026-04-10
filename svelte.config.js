@@ -6,13 +6,22 @@ import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 const config = {
-  preprocess: vitePreprocess(),
+  preprocess: vitePreprocess({ script: true }),
   kit: {
     adapter: adapter({
-      fallback: 'index.html'
+      pages: 'build',
+      assets: 'build',
+      fallback: 'index.html',
+      precompress: false
     }),
     alias: {
-      '@/*': './src/lib/*'
+      $components: 'src/components',
+      $ui: 'src/components/ui',
+      $util: 'src/util',
+      $stores: 'src/stores',
+      $services: 'src/services',
+      $pages: 'src/pages',
+      $storybook: '.storybook/'
     }
   }
 };
