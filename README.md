@@ -2,13 +2,13 @@
 
 A desktop app built with Tauri 2, SvelteKit, and TypeScript.
 
-## Prerequisites
+## 📋 Prerequisites
 
 - [Node.js](https://nodejs.org/)
 - [pnpm](https://pnpm.io/) (v10+)
 - [Rust](https://www.rust-lang.org/tools/install)
 
-## Getting Started
+## 🚀 Getting Started
 
 ```bash
 # Ensure Rust toolchain is up to date
@@ -25,7 +25,7 @@ This starts the Vite dev server on port 1420 and opens the Tauri window.
 
 IDE Setup: [VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
 
-## Commands
+## ⚡ Commands
 
 | Command          | Description                         |
 | ---------------- | ----------------------------------- |
@@ -35,7 +35,8 @@ IDE Setup: [VS Code](https://code.visualstudio.com/) + [Svelte](https://marketpl
 | `pnpm check`     | Type-check TypeScript/Svelte        |
 | `pnpm lint`      | Run ESLint                          |
 
-## Architecture
+<details>
+<summary><h2 style="display: inline">🏗️ Architecture</h2></summary>
 
 - **Tauri 2** - Desktop app framework (Rust backend)
 - **SvelteKit** - Frontend framework (Svelte 5 runes)
@@ -43,7 +44,17 @@ IDE Setup: [VS Code](https://code.visualstudio.com/) + [Svelte](https://marketpl
 - **Storybook** - Component development and documentation
 - **TypeScript** - Type safety
 
-## Frontend Development
+</details>
+
+<details>
+<summary><h2 style="display: inline">⚙️ Backend Development</h2></summary>
+
+coming soon...
+
+</details>
+
+<details>
+<summary><h2 style="display: inline">🎨 Frontend Development</h2></summary>
 
 ### Styling
 
@@ -78,3 +89,5 @@ Configured in `svelte.config.js`:
 - `$services` → `src/services`
 - `$pages` → `src/pages`
 - `$storybook` → `.storybook/`
+
+</details>
